@@ -22,7 +22,7 @@ class Var(object):
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "1812010571").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = str(getenv('APP_NAME'))
-    OWNER_USERNAME = str(getenv('varadnikharage'))
+    OWNER_USERNAME = str(getenv('@varadnikharage'))
     if 'DYNO' in environ:
         ON_HEROKU = True
         APP_NAME = str(getenv('APP_NAME'))
@@ -36,5 +36,5 @@ class Var(object):
     else:
         URL = "http://{}/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL'))
-    UPDATES_CHANNEL = str(getenv('vstreamupdate', None))
+    UPDATES_CHANNEL = str(getenv('@vstreamupdate', None))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
